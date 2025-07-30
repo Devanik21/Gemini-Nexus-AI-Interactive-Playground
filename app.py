@@ -106,7 +106,7 @@ def guess_the_object():
     if game_state["object"] is None:
         with st.spinner("I'm thinking of an object..."):
             try:
-                model = genai.GenerativeModel('gemini-pro')
+                model = genai.GenerativeModel('gemma-3-27b-it')
                 # Ask Gemini to pick an object
                 prompt = "Think of a common household object and tell me what it is. Just give me the name of the object and nothing else."
                 response = model.generate_content(prompt)
