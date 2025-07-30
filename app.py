@@ -69,7 +69,7 @@ def story_adventure():
             message_placeholder = st.empty()
             full_response = ""
             try:
-                model = genai.GenerativeModel('gemini-pro')
+                model = genai.GenerativeModel('gemma-3-27b-it')
                 # We send the whole chat history to the model
                 chat_session = model.start_chat(
                     history=[{"role": m["role"], "parts": [m["content"]]} for m in st.session_state.story_messages]
