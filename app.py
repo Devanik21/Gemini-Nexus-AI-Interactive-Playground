@@ -146,7 +146,7 @@ def guess_the_object():
             else:
                 # Ask Gemini to answer the yes/no question
                 try:
-                    model = genai.GenerativeModel('gemini-pro')
+                    model = genai.GenerativeModel('gemma-3-27b-it')
                     system_prompt = f"You are playing a guessing game. The secret object is '{game_state['object']}'. The user is asking questions to guess it. Answer the following question with only 'Yes', 'No', or 'I cannot answer that'. The question is: '{prompt}'"
                     response = model.generate_content(system_prompt)
                     full_response = response.text.strip()
@@ -188,7 +188,7 @@ def twenty_questions():
             message_placeholder = st.empty()
             full_response = ""
             try:
-                model = genai.GenerativeModel('gemini-pro')
+                model = genai.GenerativeModel('gemma-3-27b-it')
                 chat_session = model.start_chat(
                     history=[{"role": m["role"], "parts": [m["content"]]} for m in st.session_state.twentyq_messages]
                 )
