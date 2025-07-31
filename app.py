@@ -141,7 +141,7 @@ def initialize_gemini():
     try:
         api_key = st.secrets["GEMINI_API_KEY"]
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemma-2-27b-it')
+        model = genai.GenerativeModel('gemma-3-27b-it')
         return model
     except Exception as e:
         st.error(f"Failed to initialize Gemini AI: {str(e)}")
